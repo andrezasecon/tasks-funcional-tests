@@ -1,28 +1,34 @@
 package br.com.andrezasecon.tasks.functional;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class TasksTest {
 	
 	
-	public WebDriver accessAplication() {
-		System.setProperty("webdriver.chrome.driver", "C:\\dev\\java\\seleniumDrivers\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();		
+	public WebDriver accessAplication() throws MalformedURLException {
+		
+		//System.setProperty("webdriver.chrome.driver", "C:\\dev\\java\\seleniumDrivers\\chromedriver.exe");
+		//WebDriver driver = new ChromeDriver();		
+		
+		DesiredCapabilities cap = DesiredCapabilities.chrome();
+		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.15.9:4444/wd/hub"), cap);
 		
 		//acessar a aplicação
-		driver.navigate().to("http://localhost:8001/tasks");
+		driver.navigate().to("http://192.168.15.9:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		return driver;
 	}
 	
 	@Test
-	public void shouldSaveTaskWithSuccess() {
+	public void shouldSaveTaskWithSuccess() throws MalformedURLException {
 		
 		WebDriver driver = accessAplication();
 		
@@ -53,7 +59,7 @@ public class TasksTest {
 	}
 	
 	@Test
-	public void shouldNotSaveTaskWithoutDescription() {
+	public void shouldNotSaveTaskWithoutDescription() throws MalformedURLException {
 		
 		WebDriver driver = accessAplication();
 		
@@ -82,7 +88,7 @@ public class TasksTest {
 	}
 	
 	@Test
-	public void shouldNotSaveTaskWithoutDate() {
+	public void shouldNotSaveTaskWithoutDate() throws MalformedURLException {
 		
 		WebDriver driver = accessAplication();
 		
@@ -111,7 +117,7 @@ public class TasksTest {
 	}
 	
 	@Test
-	public void shouldSaveTaskWithPastDate() {
+	public void shouldSaveTaskWithPastDate() throws MalformedURLException {
 		
 		WebDriver driver = accessAplication();
 		
