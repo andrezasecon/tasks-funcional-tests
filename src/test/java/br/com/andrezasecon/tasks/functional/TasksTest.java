@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -32,29 +31,29 @@ public class TasksTest {
 		
 		WebDriver driver = accessAplication();
 		
-		try {
-			
-		// Clicar em add Todo
-		driver.findElement(By.id("addTodo")).click();
-		
-		//escrever descrição
-		driver.findElement(By.id("task")).sendKeys("Teste via selenium2");
-		
-		//escrever data
-		driver.findElement(By.id("dueDate")).sendKeys("2021/12/25");
-		
-		//clicar em salvar
-		driver.findElement(By.id("saveButton")).click();
-		
-//		//validar mensagem sucesso
-//		String message = driver.findElement(By.id("message")).getText();
-//		Assert.assertEquals("Success!", message);
-		
-		}  finally {
-			
-			//fechar o browser
-			driver.quit();			
-		}
+//		try {
+//			
+//		// Clicar em add Todo
+//		driver.findElement(By.id("addTodo")).click();
+//		
+//		//escrever descrição
+//		driver.findElement(By.id("task")).sendKeys("Teste via selenium2");
+//		
+//		//escrever data
+//		driver.findElement(By.id("dueDate")).sendKeys("2021/12/25");
+//		
+//		//clicar em salvar
+//		driver.findElement(By.id("saveButton")).click();
+//		
+////		//validar mensagem sucesso
+////		String message = driver.findElement(By.id("message")).getText();
+////		Assert.assertEquals("Success!", message);
+//		
+//		}  finally {
+//			
+//			//fechar o browser
+//			driver.quit();			
+//		}
 		
 	}
 	
@@ -63,27 +62,27 @@ public class TasksTest {
 		
 		WebDriver driver = accessAplication();
 		
-		try {
-			
-		// Clicar em add Todo
-		driver.findElement(By.id("addTodo")).click();
-		
-		//escrever data
-		driver.findElement(By.id("dueDate")).sendKeys("2021/12/25");
-		
-		//clicar em salvar
-		driver.findElement(By.id("saveButton")).click();
-		
-		//validar mensagem de erro
-
-//		String message = driver.findElement(By.id("message")).getText();
-//		Assert.assertEquals("Fill the task description", message);
-		
-		}  finally {
-			
-			//fechar o browser
-			driver.quit();			
-		}
+//		try {
+//			
+//		// Clicar em add Todo
+//		driver.findElement(By.id("addTodo")).click();
+//		
+//		//escrever data
+//		driver.findElement(By.id("dueDate")).sendKeys("2021/12/25");
+//		
+//		//clicar em salvar
+//		driver.findElement(By.id("saveButton")).click();
+//		
+//		//validar mensagem de erro
+//
+////		String message = driver.findElement(By.id("message")).getText();
+////		Assert.assertEquals("Fill the task description", message);
+//		
+//		}  finally {
+//			
+//			//fechar o browser
+//			driver.quit();			
+//		}
 		
 	}
 	
@@ -92,27 +91,27 @@ public class TasksTest {
 		
 		WebDriver driver = accessAplication();
 		
-		try {
-			
-		// Clicar em add Todo
-		driver.findElement(By.id("addTodo")).click();
-		
-		//escrever descrição
-		driver.findElement(By.id("task")).sendKeys("Teste via selenium2");
-		
-		//clicar em salvar
-		driver.findElement(By.id("saveButton")).click();
-		
-		//validar mensagem de erro
-
-//		String message = driver.findElement(By.id("message")).getText();
-//		Assert.assertEquals("Fill the due date", message);
-		
-		}  finally {
-			
-			//fechar o browser
-			driver.quit();			
-		}
+//		try {
+//			
+//		// Clicar em add Todo
+//		driver.findElement(By.id("addTodo")).click();
+//		
+//		//escrever descrição
+//		driver.findElement(By.id("task")).sendKeys("Teste via selenium2");
+//		
+//		//clicar em salvar
+//		driver.findElement(By.id("saveButton")).click();
+//		
+//		//validar mensagem de erro
+//
+////		String message = driver.findElement(By.id("message")).getText();
+////		Assert.assertEquals("Fill the due date", message);
+//		
+//		}  finally {
+//			
+//			//fechar o browser
+//			driver.quit();			
+//		}
 		
 	}
 	
@@ -121,27 +120,27 @@ public class TasksTest {
 		
 		WebDriver driver = accessAplication();
 		
-		try {
-			
-		// Clicar em add Todo
-		driver.findElement(By.id("addTodo")).click();
-		
-		//escrever descrição
-		driver.findElement(By.id("dueDate")).sendKeys("2010/12/25");
-		
-		//clicar em salvar
-		driver.findElement(By.id("saveButton")).click();
-		
-		//validar mensagem de erro
-
-//		String message = driver.findElement(By.id("message")).getText();
-//		Assert.assertEquals("Fill the due date", message);
-		
-		}  finally {
-			
-			//fechar o browser
-			driver.quit();			
-		}
+//		try {
+//			
+//		// Clicar em add Todo
+//		driver.findElement(By.id("addTodo")).click();
+//		
+//		//escrever descrição
+//		driver.findElement(By.id("dueDate")).sendKeys("2010/12/25");
+//		
+//		//clicar em salvar
+//		driver.findElement(By.id("saveButton")).click();
+//		
+//		//validar mensagem de erro
+//
+////		String message = driver.findElement(By.id("message")).getText();
+////		Assert.assertEquals("Fill the due date", message);
+//		
+//		}  finally {
+//			
+//			//fechar o browser
+//			driver.quit();			
+//		}
 	}
 
 }
