@@ -8,25 +8,30 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TasksTest {
 	
 	
 	public WebDriver accessAplication() throws MalformedURLException {
 		
-//		System.setProperty("webdriver.chrome.driver", "C:\\dev\\java\\seleniumDrivers\\chromedriver.exe");
+
 //		WebDriver driver = new ChromeDriver();		
 		
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.15.9:4444/wd/hub"), cap);
+		WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), cap);
 		
-		//acessar a aplicação
-		driver.navigate().to("http://192.168.15.9:8001/tasks");
+		//acessar a aplicaï¿½ï¿½o
+		driver.navigate().to("http://172.18.144.1:8001/tasks/");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		return driver;
 	}
+	
 	@Test
 	public void deveSalvarTarefaComSucesso() throws MalformedURLException {
 		WebDriver driver = accessAplication();
@@ -35,7 +40,7 @@ public class TasksTest {
 			//clicar em Add Todo
 			driver.findElement(By.id("addTodo")).click();
 			
-			//escrever descrição
+			//escrever descriï¿½ï¿½o
 			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 			
 			//escrever a data
@@ -84,7 +89,7 @@ public class TasksTest {
 			//clicar em Add Todo
 			driver.findElement(By.id("addTodo")).click();
 			
-			//escrever descrição
+			//escrever descriï¿½ï¿½o
 			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 			
 			//clicar em salvar
@@ -107,7 +112,7 @@ public class TasksTest {
 			//clicar em Add Todo
 			driver.findElement(By.id("addTodo")).click();
 			
-			//escrever descrição
+			//escrever descriï¿½ï¿½o
 			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 			
 			//escrever a data
@@ -124,6 +129,4 @@ public class TasksTest {
 			driver.quit();
 		}
 	}
-
-
 }
