@@ -1,19 +1,13 @@
 package br.com.andrezasecon.tasks.functional;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TasksTest {
 	
@@ -21,13 +15,13 @@ public class TasksTest {
 	public WebDriver accessAplication() throws MalformedURLException {
 		
 
-//		WebDriver driver = new ChromeDriver();		
+		WebDriver driver = new ChromeDriver();		
 		
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), cap);
+//		DesiredCapabilities cap = DesiredCapabilities.chrome();
+//		WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), cap);
 		
-		//acessar a aplica��o
-		driver.navigate().to("http://172.18.144.1:8001/tasks/");
+		//acessar a aplicacao
+		driver.navigate().to("http://localhost:8001/tasks/");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		return driver;
 	}
@@ -40,7 +34,7 @@ public class TasksTest {
 			//clicar em Add Todo
 			driver.findElement(By.id("addTodo")).click();
 			
-			//escrever descri��o
+			//escrever descricao
 			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 			
 			//escrever a data
@@ -89,7 +83,7 @@ public class TasksTest {
 			//clicar em Add Todo
 			driver.findElement(By.id("addTodo")).click();
 			
-			//escrever descri��o
+			//escrever descricao
 			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 			
 			//clicar em salvar
@@ -112,7 +106,7 @@ public class TasksTest {
 			//clicar em Add Todo
 			driver.findElement(By.id("addTodo")).click();
 			
-			//escrever descri��o
+			//escrever descricao
 			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 			
 			//escrever a data
